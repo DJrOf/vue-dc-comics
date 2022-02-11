@@ -5,16 +5,9 @@
      </figure>
      <nav>
        <ul>
-         <li><a href="">Characters</a></li>
-         <li><a href="">Comics</a></li>
-         <li><a href="">Movies</a></li>
-         <li><a href="">TV</a></li>
-         <li><a href="">Games</a></li>
-         <li><a href="">Collectibles</a></li>
-         <li><a href="">Videos</a></li>
-         <li><a href="">Fans</a></li>
-         <li><a href="">News</a></li>
-         <li><a href="">Shop</a></li>
+         <li v-for= '(option, index) in options' :key='index'>
+           <a :href="option.url" :class="{active: option.active}">
+             {{ text }}</a></li>
        </ul>
      </nav>
   </header>
@@ -23,7 +16,24 @@
 <script>
 export default {
 name: "Header",
-}
+data() {
+  return {
+    options: [ 
+      { text: "Characters", url: "#", active: false },
+      { text: "Characters", url: "#", active: false },
+      { text: "Characters", url: "#", active: false },
+      { text: "Characters", url: "#", active: false },
+      { text: "Characters", url: "#", active: false },
+      { text: "Characters", url: "#", active: false },
+      { text: "Characters", url: "#", active: false },
+      { text: "Characters", url: "#", active: false },
+      { text: "Characters", url: "#", active: false },
+      { text: "Characters", url: "#", active: false },
+    ], 
+  };
+},
+};
+
 </script>
 
 <style scoped>
